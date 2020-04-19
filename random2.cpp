@@ -1,53 +1,45 @@
+//************************************************************
+// Team #10    CSCI/CMPE 1370    Spring 2020    Homework 3 
+// Liborio Garza
+// Pablo Flores
+//************************************************************
 #include <iostream>
 #include <cmath>
-#include "functions2.h"
+#include <string>
 #include <stdlib.h>
+#include "functions.h"
 using namespace std;
 void titlemenu();
-void GetRational(int, int );
-void reduce(int ,int );
-void AddRational(int,int,int,int,int,int);
-void SubtractRational(int,int,int,int,int,int);
+int gcd(int,int);
+void add();
+void subtract();
+void GetRational(int *num,int *den);
+void reduce(int *num,int *den);
+void AddRational(int *num,int *den,int num1,int den1,int num2,int den2);
+void SubtractRational(int *num,int *den, int num1,int den1,int num2,int den2);
 void DisplayRational(int,int);
 int main()
 {
     char letter;
-    int num1,den1,num2,den2;
-    int anum=0;
-    int aden=0;
     titlemenu();
     cout<<endl;
     cout<<"Enter a Option: ";
     cin>>letter;
+    cout<<endl;
     system("CLS");
     if(letter=='A'||letter=='a')
     {
-        GetRational(num1,den1);
-        GetRational(num2,den2);
-        cout << "The result of " << num1 << "/" << den1 << " + " << num2 << "/" << den2 << endl;
-        AddRational(anum, aden, num1, den1, num2, den2);
-        cout<<anum<<"/"<<aden;
+        add();
     }
     else if(letter=='S'||letter=='s')
     {
-        GetRational(num1,den1);
-        GetRational(num2,den2);
-        cout << "The result of " << num1 << "/" << den1 << " - " << num2 << "/" << den2 << endl;
-        SubtractRational(anum, aden, num1, den1, num2, den2);
-        cout<<anum<<"/"<<aden;
+        subtract();
     }
     else
     {
-        cout<<"Thank you for using the rational calculator!!";
+        cout<<"Thank you for using the rational calculator!!!!"<<endl;
     }
     cout<<endl;
     system("pause");
     return 0;
-}
-void titlemenu()
-{
-    cout<<"Rational Calculator"<<endl;
-    cout<<"(A)Addition"<<endl;
-    cout<<"(S)Subtraction"<<endl;
-    cout<<"(Q)Quit"<<endl;
 }
