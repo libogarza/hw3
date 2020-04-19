@@ -15,7 +15,7 @@ void GetRational(int num, int den)
         cout<<"Try again.";
     }
 }
-void reduce(int *num,int *den)
+void reduce(int num,int den)
 {
     int A=*num;
     int B=*den;
@@ -26,8 +26,8 @@ void reduce(int *num,int *den)
         B=R;
         R=(A%B);
     }
-    *num=*num/B;
-    *den=*den/B;
+    num=num/B;
+    den=den/B;
 }
 void AddRational(int anum, int aden, int num1, int den1,int num2, int den2) 
 {
