@@ -22,12 +22,15 @@ void titlemenu()
 void GetRational(int &num, int &den)
 {
     char c;
-    cout<<"Please enter a fraction: ";
-    cin>>num>>c>>den;
-    if(den==0)
-    {
-        cout<<"Sorry, a fraction divide by zero is not possible.";
-    }   
+    while(true){
+        cout<<"Please enter a fraction: ";
+        cin>>num>>c>>den;
+        if(den==0)
+        {
+            cout<<"Sorry, a fraction divide by zero is not possible."<<endl;
+        }
+        else break;
+        }   
 }
 void reduce(int &num,int &den)
 {
@@ -49,7 +52,7 @@ void SubtractRational(int &anum,int &aden,int num1,int den1,int num2,int den2)
 }
 void DisplayRational(int anum,int aden) 
 {
-   cout<<"The result is: "<<anum<<endl;
+   cout<<"The result is: "<<anum;
    if(aden!=1)
    {
        cout<<"/"<<aden<<endl;
@@ -59,31 +62,29 @@ void add()
 {
     int num1,den1,num2,den2,anum,aden;
     char ans;
-    do 
-    {
+    do
+    { ans='N';
         GetRational(num1,den1);
         GetRational(num2,den2);
         AddRational(anum,aden,num1,den1,num2,den2);
         DisplayRational(anum,aden);
         cout<<"Do you want to add again(y/n): ";
         cin>>ans;
-        system("CLS");
-    }
-    while(ans=='Y'|| ans=='y');
+    } while (ans=='Y'|| ans=='y');
+    system("CLS");
 }
 void subtract()
 {
     int num1,den1,num2,den2,anum,aden;
     char ans;
-    do 
-    {
+    do
+    { ans='N';
         GetRational(num1,den1);
         GetRational(num2,den2);
         SubtractRational(anum,aden,num1,den1,num2,den2);
         DisplayRational(anum,aden);
         cout<<"Do you want to subtract again(y/n): ";
         cin>>ans;
-        system("CLS");
-    }
-    while(ans=='Y'|| ans=='y');
+    } while (ans=='Y'|| ans=='y');
+    system("CLS");
 }
